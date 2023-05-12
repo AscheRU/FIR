@@ -313,18 +313,19 @@ namespace FIR {
 		//считывание данных из файла с Аддитивным белым Гауссовским шумомв !!!!!!!!!! data !!!!!!!!!!!!! 
 		openF();
 		
-		//dft(data, data_out_my);
-		FFTAnalysis(data, data_out, 128, 128);
-		set_zero(data_out);
-		FFidft(data_out, data_result);
 		
-		//idft(data_out_my, data_result);
+		dft(data, data_out_my);
+		//FFTAnalysis(data, data_out, 128, 128);
+		set_zero(data_out_my);
+		//FFidft(data_out, data_result);
+		
+		idft(data_out_my, data_result);
 		
 		//fftr(data_out_my, data_result);
 		
 		//cout << endl << data_result[0] << " Result " << data[0];
 		//cout << endl << data_result[1] << " Result " << data[1];
-		chart(data_result, data_out);
+		chart( data_result, data_out_my);
 		
 		
 		
@@ -359,9 +360,8 @@ namespace FIR {
 
 		for (int i = 0; i < 128; i++)
 		{
-			data[i] = static_cast<int>(header.data[i]);
-			
-			
+			data[i] = static_cast<int>(header.data[i + 10]);
+		
 		}
 		
 		
@@ -433,11 +433,7 @@ namespace FIR {
 
 
 		
-		for (int i = 0; i < 128; i++)
-		{
-			
-			cout << data_out[i] << " "; // << static_cast<int>(data_out[i]) << endl;
-		}
+		
 	}
 
 	private: void FFidft(double *data_out_my, double *data_result) {
@@ -450,47 +446,40 @@ namespace FIR {
 			}
 			data_result[n] = std::round((1.0 / 128)*sum.real());
 		}
-		cout << endl;
-		for (int i = 0; i < 128; i++) {
-			cout << data_result[i] << " data result" << endl;
-		}
+		
 	}
 
 			 //построение графиков
-	private: void chart(double *data_result,  double *data_out) {
+	private: void chart(double *masX, complex<double> *masY) {
 		for (int i = 0; i < 128; i++)
 		{
-			y = data_result[i];
+			y = masX[i];
 			this->chart1->Series[0]->Points->AddXY(i, y);
 		}
 		for (int i = 0; i < 64; i++)
 		{
-			y = data_out[i] * 10;
+			y = fabs(masY[i].real()) / 5.5;
 			this->chart2->Series[0]->Points->AddXY(i * sampleR / 128, y);
 		}
 	}
 
 			 //обнуление ненужных частот
-	private: void set_zero(double *data_out_my) {
-		for (int i = 0; i < 128; i++)
-		{
-			cout << data_out_my[i] << endl;
-		}
+	private: void set_zero(complex<double> *data_out_my) {
+		
 
 		for (int i = 0; i < 20; i++)
 		{
 			data_out_my[i] *= 0;
 		}
+		for (int i = 20; i < 40; i++)
+		{
+			data_out_my[i] *= 1;
+		}
 		for (int i = 40; i < 128; i++)
 		{
 			data_out_my[i] *= 0;
 		}
-		for (int i = 0; i < 128; i++)
-		{
-			cout << data_out_my[i] << endl;
-		}
-		
-		
+	
 	}
 
 	private: void fft(double *data, complex<double> *data_out_my) {
@@ -563,15 +552,15 @@ namespace FIR {
 			for (int k = 0; k < 128; ++k) {
 				sum += data_out_my[k] * std::exp(std::complex<double>(0, 1) * TwoPi * Convert::ToDouble(k) * Convert::ToDouble(n) / 128.0);
 			}
-			data_result[n] = std::round((1.0 / 128)*sum.real());
+			data_result[n] = fabs(std::round((1.0 / 128)*sum.real())) * 5;
 		}
 		cout << endl;
 		for (int i = 0; i < 128; i++) {
-			cout << data_result[i] << " data result" << endl;
+			cout << data_result[i] << data_out_my[i] << " data result " << data[i] << endl;
 		}
 	}
-	
-	
+
+
 };
 				
 }
