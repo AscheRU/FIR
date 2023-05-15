@@ -81,6 +81,21 @@ namespace FIR {
 	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Label^  labelName1;
+	private: System::Windows::Forms::Label^  labelName4;
+	private: System::Windows::Forms::Label^  labelName3;
+	private: System::Windows::Forms::Label^  labelName2;
+	private: System::Windows::Forms::Label^  labelValue1;
+	private: System::Windows::Forms::Label^  labelValue2;
+	private: System::Windows::Forms::Label^  labelValue3;
+	private: System::Windows::Forms::Label^  labelValue4;
+	private: System::Windows::Forms::Label^  labelStat;
+
+
+
+
+
+
 
 	protected:
 
@@ -121,6 +136,15 @@ namespace FIR {
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->labelName1 = (gcnew System::Windows::Forms::Label());
+			this->labelName4 = (gcnew System::Windows::Forms::Label());
+			this->labelName3 = (gcnew System::Windows::Forms::Label());
+			this->labelName2 = (gcnew System::Windows::Forms::Label());
+			this->labelValue1 = (gcnew System::Windows::Forms::Label());
+			this->labelValue2 = (gcnew System::Windows::Forms::Label());
+			this->labelValue3 = (gcnew System::Windows::Forms::Label());
+			this->labelValue4 = (gcnew System::Windows::Forms::Label());
+			this->labelStat = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			this->SuspendLayout();
@@ -291,6 +315,89 @@ namespace FIR {
 			this->button2->Text = L"Сохранить файл";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
+			// labelName1
+			// 
+			this->labelName1->AutoSize = true;
+			this->labelName1->Location = System::Drawing::Point(55, 372);
+			this->labelName1->Name = L"labelName1";
+			this->labelName1->Size = System::Drawing::Size(171, 17);
+			this->labelName1->TabIndex = 12;
+			this->labelName1->Text = L"Частота дискретизации:";
+			// 
+			// labelName4
+			// 
+			this->labelName4->AutoSize = true;
+			this->labelName4->Location = System::Drawing::Point(55, 474);
+			this->labelName4->Name = L"labelName4";
+			this->labelName4->Size = System::Drawing::Size(148, 17);
+			this->labelName4->TabIndex = 13;
+			this->labelName4->Text = L"Количество каналов:";
+			// 
+			// labelName3
+			// 
+			this->labelName3->AutoSize = true;
+			this->labelName3->Location = System::Drawing::Point(55, 440);
+			this->labelName3->Name = L"labelName3";
+			this->labelName3->Size = System::Drawing::Size(98, 17);
+			this->labelName3->TabIndex = 14;
+			this->labelName3->Text = L"Бит в сэмпле:";
+			// 
+			// labelName2
+			// 
+			this->labelName2->AutoSize = true;
+			this->labelName2->Location = System::Drawing::Point(55, 406);
+			this->labelName2->Name = L"labelName2";
+			this->labelName2->Size = System::Drawing::Size(149, 17);
+			this->labelName2->TabIndex = 15;
+			this->labelName2->Text = L"Количество семплов:";
+			// 
+			// labelValue1
+			// 
+			this->labelValue1->AutoSize = true;
+			this->labelValue1->Location = System::Drawing::Point(232, 372);
+			this->labelValue1->Name = L"labelValue1";
+			this->labelValue1->Size = System::Drawing::Size(13, 17);
+			this->labelValue1->TabIndex = 16;
+			this->labelValue1->Text = L"-";
+			// 
+			// labelValue2
+			// 
+			this->labelValue2->AutoSize = true;
+			this->labelValue2->Location = System::Drawing::Point(232, 406);
+			this->labelValue2->Name = L"labelValue2";
+			this->labelValue2->Size = System::Drawing::Size(13, 17);
+			this->labelValue2->TabIndex = 17;
+			this->labelValue2->Text = L"-";
+			// 
+			// labelValue3
+			// 
+			this->labelValue3->AutoSize = true;
+			this->labelValue3->Location = System::Drawing::Point(232, 440);
+			this->labelValue3->Name = L"labelValue3";
+			this->labelValue3->Size = System::Drawing::Size(13, 17);
+			this->labelValue3->TabIndex = 18;
+			this->labelValue3->Text = L"-";
+			// 
+			// labelValue4
+			// 
+			this->labelValue4->AutoSize = true;
+			this->labelValue4->Location = System::Drawing::Point(232, 474);
+			this->labelValue4->Name = L"labelValue4";
+			this->labelValue4->Size = System::Drawing::Size(13, 17);
+			this->labelValue4->TabIndex = 19;
+			this->labelValue4->Text = L"-";
+			// 
+			// labelStat
+			// 
+			this->labelStat->AutoSize = true;
+			this->labelStat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labelStat->ForeColor = System::Drawing::Color::Snow;
+			this->labelStat->Location = System::Drawing::Point(55, 508);
+			this->labelStat->Name = L"labelStat";
+			this->labelStat->Size = System::Drawing::Size(0, 20);
+			this->labelStat->TabIndex = 20;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -298,6 +405,15 @@ namespace FIR {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
 			this->ClientSize = System::Drawing::Size(950, 650);
+			this->Controls->Add(this->labelStat);
+			this->Controls->Add(this->labelValue4);
+			this->Controls->Add(this->labelValue3);
+			this->Controls->Add(this->labelValue2);
+			this->Controls->Add(this->labelValue1);
+			this->Controls->Add(this->labelName2);
+			this->Controls->Add(this->labelName3);
+			this->Controls->Add(this->labelName4);
+			this->Controls->Add(this->labelName1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button_openF);
@@ -315,6 +431,7 @@ namespace FIR {
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"КИХ";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
 			this->ResumeLayout(false);
@@ -329,16 +446,16 @@ namespace FIR {
 	private: double *filedata = new double[x];
 	private: double *data_out = new double[128];
 	private: complex<double> *data_out_my = new complex<double>[128];
-	//private: double *data_out_my = new double[128];
+			 //private: double *data_out_my = new double[128];
 	private: double *data_result = new double[128];
 	private: complex<double> *datamatr = new complex<double>[128];
 	private: typedef complex<double> base;
 	private: int sampleR = 44100;
 	private: const double TwoPi = 6.283185307179586;
-			
 
 
-	//выставляет параметры частот по умолчанию, если значения не были введены
+
+			 //выставляет параметры частот по умолчанию, если значения не были введены
 	private: void DefaultParams() {
 		a = 0;
 		b = 5000;
@@ -351,7 +468,7 @@ namespace FIR {
 		setlocale(0, "");
 		FILE *file;
 		errno_t error;
-		error = fopen_s(&file, "C:\\Users\\vidre\\source\\repos\\FIR\\005.wav", "rb");
+		error = fopen_s(&file, "005.wav", "rb");
 		if (error)
 		{
 			cout << "Не удалось открыть файл\n";
@@ -366,6 +483,7 @@ namespace FIR {
 		for (int i = 0; i < 128; i++)
 		{
 			data[i] = static_cast<int>(header.data[i + 10]);
+			//cout << data[i] << endl;
 
 		}
 
@@ -471,8 +589,8 @@ namespace FIR {
 
 			 //обнуление ненужных частот
 	private: void set_zero(complex<double> *data_out_my, double f1, double f2) {
-		f1 = round(f1 * 128 / 44100 );
-		f2 = round(f2 * 128 / 44100 );
+		f1 = round(f1 * 128 / 44100);
+		f2 = round(f2 * 128 / 44100);
 		cout << endl << f1 << " " << f2 << endl;
 		for (int i = 0; i < f1; i++)
 		{
@@ -563,15 +681,15 @@ namespace FIR {
 			cout << data_result[i] << data_out_my[i] << " data result " << data[i] << endl;
 		}
 	}
-	
-	//кнопка выхода
+
+			 //кнопка выхода
 	private: System::Void btn_exit_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
 
 
 
-	//кнопка расчета ИХ
+			 //кнопка расчета ИХ
 	private: System::Void buttonFIR_Click(System::Object^  sender, System::EventArgs^  e) {
 
 		//проверка на ввод параметров частот
@@ -589,35 +707,34 @@ namespace FIR {
 
 		//считывание данных из файла с Аддитивным белым Гауссовским шумомв !!!!!!!!!! data !!!!!!!!!!!!! 
 		openF();
-		
-		
+
+
 		dft(data, data_out_my);
 		//FFTAnalysis(data, data_out, 128, 128);
 		set_zero(data_out_my, a, b);
 		//FFidft(data_out, data_result);
-		
+
 		idft(data_out_my, data_result);
-		
+
 		//fftr(data_out_my, data_result);
-		
+
 		//cout << endl << data_result[0] << " Result " << data[0];
 		//cout << endl << data_result[1] << " Result " << data[1];
-		chart( data_result, data_out_my);
-		
-		
-		
+		chart(data_result, data_out_my);
+
+
+
 
 
 
 	}
-	
 
-	//кнопка открыти файла для преобразования
+
+			 //кнопка открытия файла для преобразования
 	private: System::Void button_openF_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ FileName = "";
 		string Fname;
-		//string filename = openFileDialog1->FileName;
-		
+
 
 		if (openFileDialog1->ShowDialog() == Windows::Forms::DialogResult::OK) {
 			FileName = openFileDialog1->FileName;
@@ -628,43 +745,89 @@ namespace FIR {
 		Fname = chars;
 		Marshal::FreeHGlobal(IntPtr((void*)chars));
 		const char *c = Fname.c_str();
+		vector<int> dataF;
+		//считывание файла
 		
-		setlocale(0, "");
-		FILE *file;
-		errno_t error;
-		error = fopen_s(&file, c, "rb");
-		if (error)
-		{
-			cout << "Не удалось открыть файл\n";
-			system("pause");
-			return;
-		}
+			ifstream wav_file(c, ios::binary);
+			if (!wav_file.is_open()) {
+				cout << "Could not open file: " << endl;
+				return;
+			}
 
-		WAVHEADER header;
-		fread_s(&header, sizeof(WAVHEADER), sizeof(WAVHEADER), 1, file);
+			// Перемещаем курсор на нужное место в файле, чтобы начать чтение сэмплов
+			wav_file.seekg(44);
 
-		//количество сэмплов
-		x = ((header.Subchunk2Size * 8) / (header.BitsPerSample)) ;
-		cout << x << " XXXXXX" << endl;
-		for (int i = 0; i < 128; i++)
-		{
-			filedata[i] = static_cast<int>(header.data[i]);
+			// Читаем каждый сэмпл из файла и сохраняем в векторе dataF
+			while (!wav_file.eof()) {
+				short int sample;
+				wav_file.read((char*)&sample, sizeof(sample));
+				if (!wav_file.eof()) {
+					dataF.push_back((int)sample);
+				}
+			}
 
-		}
-		cout << filedata[0];
-
-
+			wav_file.close();
+			for (int i = 0; i < dataF.size(); i++) {
+				cout << i << " " << dataF[i] << endl;
+			}
+		
 
 
 
-		fclose(file);
 
-		//system("pause");
-		return;
+
+	//setlocale(0, "");
+	//FILE *file;
+	//errno_t error;
+	//error = fopen_s(&file, c, "rb");
+	//if (error)
+	//{
+	//	cout << "Не удалось открыть файл\n";
+	//	system("pause");
+	//	return;
+	//}
+
+	//WAVHEADER header;
+	//fread_s(&header, sizeof(WAVHEADER), sizeof(WAVHEADER), 1, file);
+
+	////const int couSample, sampleRate, bitPerSamp, nChann;
+	//
+	//int sampleRate = header.SamplesRate;									//частота дискретизации
+	//const int couSample = (header.Subchunk2Size * 8) / (header.BitsPerSample) ;   //количество сэмплов
+	//int bitPerSamp = header.BitsPerSample;									//бит в сэмпле
+	//int nChann = header.nChannels;											//количество каналов
+	//int dataBYTE = header.Subchunk2Size;
+	//cout << dataBYTE << endl;
+	//
+	//vector <long int> mass(couSample);
+	////int filedataF[couSample]; //массив для заполнения из header.data
+	//cout << couSample << "количество сэмплов";
+	//
+
+	//this->labelStat->Text = "Данные загружены";
+	//this->labelValue1->Text = Convert::ToString(sampleRate);
+	//this->labelValue2->Text = Convert::ToString(couSample);
+	//this->labelValue3->Text = Convert::ToString(bitPerSamp);
+	//this->labelValue4->Text = Convert::ToString(nChann);
+	//cout << endl << static_cast<int>(header.data[2000]) << " 88000" << endl;
+	////for (int i = 0; i < couSample; i++)
+	////{
+	////	mass.push_back(static_cast<int>(header.data[i]));
+	////	//cout << i << ' ' << static_cast<int>(header.data[i]) << endl;
+	////}
+	//
+	//fclose(file);
+
+	////system("pause");
+	//return;
 
 
 	}
+	
 
+
+	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {}
+	private: System::Void lableValue2_Click(System::Object^  sender, System::EventArgs^  e) {}
 
 };
 				

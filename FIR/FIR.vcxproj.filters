@@ -28,5 +28,13 @@
     <Media Include="..\..\..\..\OneDrive\Рабочий стол\pyProjects\frequency\005.wav">
       <Filter>Файлы ресурсов</Filter>
     </Media>
+    <Media Include="..\1.wav">
+      <Filter>Файлы ресурсов</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <Filter>Файлы ресурсов</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

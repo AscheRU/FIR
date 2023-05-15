@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\..\OneDrive\Рабочий стол\pyProjects\frequency\005.wav" />
+    <Media Include="..\1.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
