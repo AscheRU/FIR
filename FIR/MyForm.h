@@ -79,8 +79,9 @@ namespace FIR {
 	private: System::Windows::Forms::Button^  buttonFIR;
 	private: System::Windows::Forms::Button^  button_openF;
 	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
+
+
+
 	private: System::Windows::Forms::Label^  labelName1;
 	private: System::Windows::Forms::Label^  labelName4;
 	private: System::Windows::Forms::Label^  labelName3;
@@ -90,6 +91,11 @@ namespace FIR {
 	private: System::Windows::Forms::Label^  labelValue3;
 	private: System::Windows::Forms::Label^  labelValue4;
 	private: System::Windows::Forms::Label^  labelStat;
+	private: System::Windows::Forms::Label^  labelValue5;
+	private: System::Windows::Forms::Label^  labelName5;
+	private: System::Windows::Forms::Button^  button_saveF;
+	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog1;
+	private: System::Windows::Forms::Button^  button_data_processing;
 
 
 
@@ -134,8 +140,6 @@ namespace FIR {
 			this->buttonFIR = (gcnew System::Windows::Forms::Button());
 			this->button_openF = (gcnew System::Windows::Forms::Button());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->labelName1 = (gcnew System::Windows::Forms::Label());
 			this->labelName4 = (gcnew System::Windows::Forms::Label());
 			this->labelName3 = (gcnew System::Windows::Forms::Label());
@@ -145,6 +149,11 @@ namespace FIR {
 			this->labelValue3 = (gcnew System::Windows::Forms::Label());
 			this->labelValue4 = (gcnew System::Windows::Forms::Label());
 			this->labelStat = (gcnew System::Windows::Forms::Label());
+			this->labelValue5 = (gcnew System::Windows::Forms::Label());
+			this->labelName5 = (gcnew System::Windows::Forms::Label());
+			this->button_saveF = (gcnew System::Windows::Forms::Button());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->button_data_processing = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			this->SuspendLayout();
@@ -230,6 +239,7 @@ namespace FIR {
 			this->tBox1->Name = L"tBox1";
 			this->tBox1->Size = System::Drawing::Size(100, 26);
 			this->tBox1->TabIndex = 3;
+			this->tBox1->Text = L"0";
 			// 
 			// tBox2
 			// 
@@ -241,6 +251,7 @@ namespace FIR {
 			this->tBox2->Name = L"tBox2";
 			this->tBox2->Size = System::Drawing::Size(100, 26);
 			this->tBox2->TabIndex = 4;
+			this->tBox2->Text = L"5000";
 			// 
 			// label1
 			// 
@@ -296,24 +307,6 @@ namespace FIR {
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
 			this->openFileDialog1->Filter = L"(*.wav)|*.wav";
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(58, 197);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 52);
-			this->button1->TabIndex = 10;
-			this->button1->Text = L"Обработать файл";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(58, 260);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 52);
-			this->button2->TabIndex = 11;
-			this->button2->Text = L"Сохранить файл";
-			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// labelName1
 			// 
@@ -393,10 +386,49 @@ namespace FIR {
 			this->labelStat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->labelStat->ForeColor = System::Drawing::Color::Snow;
-			this->labelStat->Location = System::Drawing::Point(55, 508);
+			this->labelStat->Location = System::Drawing::Point(54, 542);
 			this->labelStat->Name = L"labelStat";
 			this->labelStat->Size = System::Drawing::Size(0, 20);
 			this->labelStat->TabIndex = 20;
+			// 
+			// labelValue5
+			// 
+			this->labelValue5->AutoSize = true;
+			this->labelValue5->Location = System::Drawing::Point(234, 508);
+			this->labelValue5->Name = L"labelValue5";
+			this->labelValue5->Size = System::Drawing::Size(13, 17);
+			this->labelValue5->TabIndex = 21;
+			this->labelValue5->Text = L"-";
+			// 
+			// labelName5
+			// 
+			this->labelName5->AutoSize = true;
+			this->labelName5->Location = System::Drawing::Point(55, 508);
+			this->labelName5->Name = L"labelName5";
+			this->labelName5->Size = System::Drawing::Size(173, 17);
+			this->labelName5->TabIndex = 22;
+			this->labelName5->Text = L"Размер данных в байтах:";
+			// 
+			// button_saveF
+			// 
+			this->button_saveF->Location = System::Drawing::Point(58, 255);
+			this->button_saveF->Name = L"button_saveF";
+			this->button_saveF->Size = System::Drawing::Size(100, 52);
+			this->button_saveF->TabIndex = 23;
+			this->button_saveF->Text = L"Сохранить файл";
+			this->button_saveF->UseVisualStyleBackColor = true;
+			this->button_saveF->Click += gcnew System::EventHandler(this, &MyForm::button_saveF_Click);
+			// 
+			// button_data_processing
+			// 
+			this->button_data_processing->Location = System::Drawing::Point(58, 197);
+			this->button_data_processing->Name = L"button_data_processing";
+			this->button_data_processing->Size = System::Drawing::Size(100, 52);
+			this->button_data_processing->TabIndex = 24;
+			this->button_data_processing->Text = L"Обработать файл";
+			this->button_data_processing->UseMnemonic = false;
+			this->button_data_processing->UseVisualStyleBackColor = false;
+			this->button_data_processing->Click += gcnew System::EventHandler(this, &MyForm::button_data_processing_Click);
 			// 
 			// MyForm
 			// 
@@ -405,6 +437,10 @@ namespace FIR {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
 			this->ClientSize = System::Drawing::Size(950, 650);
+			this->Controls->Add(this->button_data_processing);
+			this->Controls->Add(this->button_saveF);
+			this->Controls->Add(this->labelName5);
+			this->Controls->Add(this->labelValue5);
 			this->Controls->Add(this->labelStat);
 			this->Controls->Add(this->labelValue4);
 			this->Controls->Add(this->labelValue3);
@@ -414,8 +450,6 @@ namespace FIR {
 			this->Controls->Add(this->labelName3);
 			this->Controls->Add(this->labelName4);
 			this->Controls->Add(this->labelName1);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button_openF);
 			this->Controls->Add(this->buttonFIR);
 			this->Controls->Add(this->label3);
@@ -440,18 +474,17 @@ namespace FIR {
 		}
 
 #pragma endregion
-	private: double a, b;
-	private: double x = 0;
-	private: double *data = new double[128];
-	private: double *filedata = new double[x];
-	private: double *data_out = new double[128];
-	private: complex<double> *data_out_my = new complex<double>[128];
-			 //private: double *data_out_my = new double[128];
-	private: double *data_result = new double[128];
-	private: complex<double> *datamatr = new complex<double>[128];
-	private: typedef complex<double> base;
-	private: int sampleR = 44100;
-	private: const double TwoPi = 6.283185307179586;
+
+	private: double a, b;													//значения частот для текстбоксов
+	private: int x;															//количество семплов в файле
+	private: int *dataF = new int[40074836];									//данные из обрабатываемого файла
+	private: int *dataPROC = new int[40074836];								//обработанные данные для записи в файл
+	private: double *data = new double[128];								//данные из файла с белым шумом для получения ИХ
+	private: complex<double> *data_out_my = new complex<double>[128];		//комплексные числи на выходе прямого преобразования Фурье
+	private: double *data_result = new double[128];							//данные ИХ после всех обработок ( обратное пр. Фурье и симметрия)
+	private: double *data_FIR = new double[127];							//временное хранение данных при обработке ИХ в треугольник.(обработчик события //кнопка расчета ИХ)
+	private: complex<double> *datamatr = new complex<double>[128];			//матрица для вычисления ППФ и ОПФ
+	private: const double TwoPi = 6.283185307179586;						//число Пи * 2
 
 
 
@@ -462,128 +495,91 @@ namespace FIR {
 
 	}
 
-			 //считывание файла в data
+			 //считывание файла АБГШ в data
 	private: void openF() {
 
-		setlocale(0, "");
-		FILE *file;
-		errno_t error;
-		error = fopen_s(&file, "005.wav", "rb");
-		if (error)
-		{
-			cout << "Не удалось открыть файл\n";
-			system("pause");
+		ifstream wav_file("005.wav", ios::binary);
+		if (!wav_file.is_open()) {
+			MessageBox::Show("Не удалось открыть файл!", "Ошибка.");
 			return;
 		}
 
-		WAVHEADER header;
-		fread_s(&header, sizeof(WAVHEADER), sizeof(WAVHEADER), 1, file);
+		// Перемещаем курсор на нужное место в файле, чтобы начать чтение сэмплов
+		wav_file.seekg(48);
 
 
-		for (int i = 0; i < 128; i++)
-		{
-			data[i] = static_cast<int>(header.data[i + 10]);
-			//cout << data[i] << endl;
 
+		// Читаем каждый сэмпл из файла и сохраняем в векторе dataF
+		int z = 0;
+		while (z < 128) {
+			short int sample;
+			wav_file.read((char*)&sample, sizeof(sample));
+			if (!wav_file.eof()) {
+				//dataF.push_back((int)sample);
+				data[z] = (int)sample;
+				cout << z << " " << data[z] << endl;
+			}
+			z++;
 		}
 
 
 
-
-
-		fclose(file);
-
-		//system("pause");
+		wav_file.close();
 		return;
 	}
+			 
+			 //запись файла
+	private: void writeWAV(int *data, const std::string &filename, int sampleRate, int numChannels, int bitsPerSample, int dataS)
+	{
+		ofstream outFile(filename, std::ios::binary);
 
-	private: void FFTAnalysis(double *AVal, double *FTvl, int Nvl, int Nft) {
-		int i, j, n, m, Mmax, Istp;
-		double Tmpr, Tmpi, Wtmp, Theta;
-		double Wpr, Wpi, Wr, Wi;
-		double *Tmvl;
+		// Заголовок WAV-файла
+		outFile.write("RIFF", 4);
+		int32_t fileSize = 36 + dataS * bitsPerSample / 8;
+		outFile.write(reinterpret_cast<const char *>(&fileSize), 4);
+		outFile.write("WAVE", 4);
 
-		n = Nvl * 2; Tmvl = new double[n];
+		// Формат
+		outFile.write("fmt ", 4);
+		int32_t subchunk1Size = 16;
+		outFile.write(reinterpret_cast<const char *>(&subchunk1Size), 4);
+		int16_t audioFormat = 1; // 1 для PCM
+		outFile.write(reinterpret_cast<const char *>(&audioFormat), 2);
+		outFile.write(reinterpret_cast<const char *>(&numChannels), 2);
+		outFile.write(reinterpret_cast<const char *>(&sampleRate), 4);
+		int32_t byteRate = sampleRate * numChannels * bitsPerSample / 8;
+		outFile.write(reinterpret_cast<const char *>(&byteRate), 4);
+		int16_t blockAlign = numChannels * bitsPerSample / 8;
+		outFile.write(reinterpret_cast<const char *>(&blockAlign), 2);
+		outFile.write(reinterpret_cast<const char *>(&bitsPerSample), 2);
 
-		for (i = 0; i < n; i += 2) {
-			Tmvl[i] = 0;
-			Tmvl[i + 1] = AVal[i / 2];
+		// Данные
+		outFile.write("data", 4);
+		int32_t dataSize = dataS * bitsPerSample / 8;
+		outFile.write(reinterpret_cast<const char *>(&dataSize), 4);
+
+		// Запись массива данных в файл
+		for (int i = 0; i < dataS; i++)
+		{
+			outFile.write(reinterpret_cast<const char *>(&data[i]), bitsPerSample / 8);
 		}
 
-		i = 1; j = 1;
-		while (i < n) {
-			if (j > i) {
-				Tmpr = Tmvl[i]; Tmvl[i] = Tmvl[j]; Tmvl[j] = Tmpr;
-				Tmpr = Tmvl[i + 1]; Tmvl[i + 1] = Tmvl[j + 1]; Tmvl[j + 1] = Tmpr;
-			}
-			i = i + 2; m = Nvl;
-			while ((m >= 2) && (j > m)) {
-				j = j - m; m = m >> 1;
-			}
-			j = j + m;
-		}
-
-		Mmax = 2;
-		while (n > Mmax) {
-			Theta = -TwoPi / Mmax; Wpi = sin(Theta);
-			Wtmp = sin(Theta / 2); Wpr = Wtmp * Wtmp * 2;
-			Istp = Mmax * 2; Wr = 1; Wi = 0; m = 1;
-
-			while (m < Mmax) {
-				i = m; m = m + 2; Tmpr = Wr; Tmpi = Wi;
-				Wr = Wr - Tmpr * Wpr - Tmpi * Wpi;
-				Wi = Wi + Tmpr * Wpi - Tmpi * Wpr;
-
-				while (i < n) {
-					j = i + Mmax;
-					Tmpr = Wr * Tmvl[j] - Wi * Tmvl[j - 1];
-					Tmpi = Wi * Tmvl[j] + Wr * Tmvl[j - 1];
-
-					Tmvl[j] = Tmvl[i] - Tmpr; Tmvl[j - 1] = Tmvl[i - 1] - Tmpi;
-					Tmvl[i] = Tmvl[i] + Tmpr; Tmvl[i - 1] = Tmvl[i - 1] + Tmpi;
-					i = i + Istp;
-				}
-			}
-
-			Mmax = Istp;
-		}
-
-		for (i = 0; i < Nft; i++) {
-			j = i * 2; FTvl[i] = 2 * sqrt(pow(Tmvl[j], 2) + pow(Tmvl[j + 1], 2)) / Nvl;
-		}
-
-		delete[]Tmvl;
-
-
-
-
+		outFile.close();
 	}
 
-	private: void FFidft(double *data_out_my, double *data_result) {
-		const double TwoPi = 6.283185307179586;
-
-		for (int n = 0; n < 128; ++n) {
-			complex<double> sum(0, 0);
-			for (int k = 0; k < 128; ++k) {
-				sum += data_out_my[k] * std::exp(std::complex<double>(0, 1) * TwoPi * Convert::ToDouble(k) * Convert::ToDouble(n) / 128.0);
-			}
-			data_result[n] = std::round((1.0 / 128)*sum.real());
-		}
-
-	}
 
 			 //построение графиков
 	private: void chart(double *masX, complex<double> *masY) {
 		double y = 0;
-		for (int i = 0; i < 128; i++)
+		for (int i = 0; i < 127; i++)
 		{
 			y = masX[i];
 			this->chart1->Series[0]->Points->AddXY(i, y);
 		}
 		for (int i = 1; i < 65; i++)
 		{
-			y = fabs(masY[i].real());
-			this->chart2->Series[0]->Points->AddXY(i * sampleR / 128, y);
+			y = masY[i].real() / 20;
+			this->chart2->Series[0]->Points->AddXY(i * 44100 / 128, y);
 		}
 	}
 
@@ -604,51 +600,7 @@ namespace FIR {
 
 	}
 
-	private: void fft(double *data, complex<double> *data_out_my) {
-		complex<double> datamatr[128][128];
-		complex<double> jCO(0, 1);
-		const double TwoPi = 6.283185307179586;
-		//datamatr[0][0] = jCO;
-		for (int i = 0; i < 128; i++) {
-			for (int j = 0; j < 128; j++) {
-				datamatr[i][j] = pow(2.7182, -1.0 * jCO * TwoPi / 128.0 * Convert::ToDouble(i) * Convert::ToDouble(j));
-			}
-		}
-
-		for (int i = 0; i < 128; i++) {
-			complex<double> value = (0, 0);
-			for (int j = 0; j < 128; j++) {
-				value += Convert::ToDouble(data[j]) * datamatr[i][j];
-			}
-			data_out_my[i] = value;
-		}
-		cout << data_out_my[0] << "data out my 0" << endl;
-		cout << data_out_my[1] << "data out my 0" << endl;
-
-
-	}
-
-	private: void fftr(complex<double> *data_out_my, complex<double> *data_result) {
-		complex<double> datamatr[128][128];
-		complex<double> jCO(0, 1);
-		const double TwoPi = 6.283185307179586;
-		for (int i = 0; i < 128; i++) {
-			for (int j = 0; j < 128; j++) {
-				datamatr[i][j] = pow(2.7182, jCO * TwoPi / 128.0 * Convert::ToDouble(i) * Convert::ToDouble(j));
-			}
-		}
-
-		for (int i = 0; i < 128; i++) {
-			complex<double> value = 0.0;
-			for (int j = 0; j < 128; j++) {
-				value += data_out[j] * datamatr[i][j];
-			}
-			data_result[i] = value * 1.0 / 128.0;
-		}
-	}
-
-
-			 //из gpt
+			 //прямое Фурье
 	private: void dft(double *data, complex<double> *data_out_my) {
 		const double TwoPi = 6.283185307179586;
 
@@ -665,7 +617,7 @@ namespace FIR {
 		cout << data[0] << endl;
 	}
 
-			 //обратное из gpt
+			 //обратное Фурье
 	private: void idft(complex<double> *data_out_my, double *data_result) {
 		const double TwoPi = 6.283185307179586;
 
@@ -674,7 +626,7 @@ namespace FIR {
 			for (int k = 0; k < 128; ++k) {
 				sum += data_out_my[k] * std::exp(std::complex<double>(0, 1) * TwoPi * Convert::ToDouble(k) * Convert::ToDouble(n) / 128.0);
 			}
-			data_result[n] = fabs(std::round((1.0 / 128)*sum.real()));
+			data_result[n] = std::round((1.0 / 128)*sum.real());
 		}
 		cout << endl;
 		for (int i = 0; i < 128; i++) {
@@ -682,14 +634,18 @@ namespace FIR {
 		}
 	}
 
-			 //кнопка выхода
+
+
+
+
+			 //КНОПКА выхода
 	private: System::Void btn_exit_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
 
 
 
-			 //кнопка расчета ИХ
+			 //КНОПКА расчета ИХ
 	private: System::Void buttonFIR_Click(System::Object^  sender, System::EventArgs^  e) {
 
 		//проверка на ввод параметров частот
@@ -705,32 +661,39 @@ namespace FIR {
 		this->chart1->Series[0]->Points->Clear();
 		this->chart2->Series[0]->Points->Clear();
 
-		//считывание данных из файла с Аддитивным белым Гауссовским шумомв !!!!!!!!!! data !!!!!!!!!!!!! 
+		//считывание данных из файла с Аддитивным белым Гауссовским шумом !!!!!!!!!! data !!!!!!!!!!!!! 
 		openF();
 
+		//преобразование в треугольник
+		double sko = 1;
+		for (int i = 0; i < 128; i++) {
+			data[i] = Convert::ToInt16(data[i] * sko);
+			sko -= 0.0078125;
+			cout << i << " " << data[i] << " kkkkkkk" << endl;
+		}
+		for (int i = 1, j = 0; i < 128; i += 2, j++) {
+			data_FIR[j] = data[127 - i];
+		}
+		for (int i = 0, j = 64; i < 128; i += 2, j++) {
+			data_FIR[j] = data[i];
+		}
+		for (int i = 0; i < 128; i++) {
+			cout << i << " " << data_FIR[i] << " FIR" << endl;
+		}
 
-		dft(data, data_out_my);
-		//FFTAnalysis(data, data_out, 128, 128);
+		dft(data_FIR, data_out_my);
+		
 		set_zero(data_out_my, a, b);
-		//FFidft(data_out, data_result);
-
+		
 		idft(data_out_my, data_result);
 
-		//fftr(data_out_my, data_result);
-
-		//cout << endl << data_result[0] << " Result " << data[0];
-		//cout << endl << data_result[1] << " Result " << data[1];
 		chart(data_result, data_out_my);
-
-
-
-
 
 
 	}
 
 
-			 //кнопка открытия файла для преобразования
+			 //КНОПКА открытия файла для преобразования
 	private: System::Void button_openF_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ FileName = "";
 		string Fname;
@@ -740,14 +703,49 @@ namespace FIR {
 			FileName = openFileDialog1->FileName;
 		}
 		using namespace Runtime::InteropServices;
-		const char* chars =
-			(const char*)(Marshal::StringToHGlobalAnsi(FileName)).ToPointer();
+		const char* chars = (const char*)(Marshal::StringToHGlobalAnsi(FileName)).ToPointer();
 		Fname = chars;
 		Marshal::FreeHGlobal(IntPtr((void*)chars));
 		const char *c = Fname.c_str();
-		vector<int> dataF;
-		//считывание файла
 		
+
+		
+
+								//СЧИТЫВАНИЕ ФАЙЛА
+		//считывание шапки
+
+		FILE *file;
+		errno_t error;
+		error = fopen_s(&file, c, "rb");
+		if (error)
+		{
+			cout << "Не удалось открыть файл\n";
+			system("pause");
+			return;
+		}
+		WAVHEADER header;
+		fread_s(&header, sizeof(WAVHEADER), sizeof(WAVHEADER), 1, file);
+		int sampleRate = header.SamplesRate;											//частота дискретизации
+		int couSample = (header.Subchunk2Size * 8) / (header.BitsPerSample);   //количество сэмплов
+		int bitPerSamp = header.BitsPerSample;										//бит в сэмпле
+		int nChann = header.nChannels;												//количество каналов
+		int dataBYTE = header.Subchunk2Size;
+		//x = 50000;
+
+		this->labelStat->Text = "Данные загружены";
+		this->labelValue1->Text = Convert::ToString(sampleRate);
+		this->labelValue2->Text = Convert::ToString(couSample);
+		this->labelValue3->Text = Convert::ToString(bitPerSamp);
+		this->labelValue4->Text = Convert::ToString(nChann);
+		this->labelValue5->Text = Convert::ToString(dataBYTE);
+
+
+		fclose(file);
+		
+		
+		//считывание данных
+		
+
 			ifstream wav_file(c, ios::binary);
 			if (!wav_file.is_open()) {
 				cout << "Could not open file: " << endl;
@@ -758,68 +756,62 @@ namespace FIR {
 			wav_file.seekg(44);
 
 			// Читаем каждый сэмпл из файла и сохраняем в векторе dataF
+			int z = 0;
 			while (!wav_file.eof()) {
 				short int sample;
 				wav_file.read((char*)&sample, sizeof(sample));
 				if (!wav_file.eof()) {
-					dataF.push_back((int)sample);
+					//dataF.push_back((int)sample);
+					dataF[z] = (int)sample;
+					//cout << z << " " << dataF[z] << endl;
 				}
+				z++;
 			}
+			x = z;
 
 			wav_file.close();
-			for (int i = 0; i < dataF.size(); i++) {
-				cout << i << " " << dataF[i] << endl;
-			}
+
+	}
+
+			//КНОПКА обработки файла
+	private: System::Void button_data_processing_Click(System::Object^  sender, System::EventArgs^  e) {
 		
 
+		int val = 0;
+		for (int i = 0; i < x - 127; i++) {
+			val = 0;
+			for (int j = 0; j < 128; j++) {
+				val += data_result[j] * dataF[i + j];
+			}
+			dataPROC[i] = val / 32767;
+			
+		}
+		
+		this->labelStat->Text = "Данные обработаны";
+		
+	}
 
 
+	
+			 //КНОПКА сохранения файла
+	private: System::Void button_saveF_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ FileName = "";
+		string Fname;
 
 
-	//setlocale(0, "");
-	//FILE *file;
-	//errno_t error;
-	//error = fopen_s(&file, c, "rb");
-	//if (error)
-	//{
-	//	cout << "Не удалось открыть файл\n";
-	//	system("pause");
-	//	return;
-	//}
+		if (saveFileDialog1->ShowDialog() == Windows::Forms::DialogResult::OK) {
+			FileName = saveFileDialog1->FileName;
+		}
+		using namespace Runtime::InteropServices;
+		const char* chars = (const char*)(Marshal::StringToHGlobalAnsi(FileName)).ToPointer();
+		Fname = chars;
+		Marshal::FreeHGlobal(IntPtr((void*)chars));
+		const char *c = Fname.c_str();
 
-	//WAVHEADER header;
-	//fread_s(&header, sizeof(WAVHEADER), sizeof(WAVHEADER), 1, file);
+		writeWAV(dataPROC, c, 44100, 1, 16, x);
 
-	////const int couSample, sampleRate, bitPerSamp, nChann;
-	//
-	//int sampleRate = header.SamplesRate;									//частота дискретизации
-	//const int couSample = (header.Subchunk2Size * 8) / (header.BitsPerSample) ;   //количество сэмплов
-	//int bitPerSamp = header.BitsPerSample;									//бит в сэмпле
-	//int nChann = header.nChannels;											//количество каналов
-	//int dataBYTE = header.Subchunk2Size;
-	//cout << dataBYTE << endl;
-	//
-	//vector <long int> mass(couSample);
-	////int filedataF[couSample]; //массив для заполнения из header.data
-	//cout << couSample << "количество сэмплов";
-	//
+		this->labelStat->Text = "Данные сохранены";
 
-	//this->labelStat->Text = "Данные загружены";
-	//this->labelValue1->Text = Convert::ToString(sampleRate);
-	//this->labelValue2->Text = Convert::ToString(couSample);
-	//this->labelValue3->Text = Convert::ToString(bitPerSamp);
-	//this->labelValue4->Text = Convert::ToString(nChann);
-	//cout << endl << static_cast<int>(header.data[2000]) << " 88000" << endl;
-	////for (int i = 0; i < couSample; i++)
-	////{
-	////	mass.push_back(static_cast<int>(header.data[i]));
-	////	//cout << i << ' ' << static_cast<int>(header.data[i]) << endl;
-	////}
-	//
-	//fclose(file);
-
-	////system("pause");
-	//return;
 
 
 	}
@@ -828,6 +820,10 @@ namespace FIR {
 
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {}
 	private: System::Void lableValue2_Click(System::Object^  sender, System::EventArgs^  e) {}
+
+
+
+
 
 };
 				
