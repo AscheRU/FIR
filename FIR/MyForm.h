@@ -419,6 +419,10 @@ namespace FIR {
 			this->button_saveF->UseVisualStyleBackColor = true;
 			this->button_saveF->Click += gcnew System::EventHandler(this, &MyForm::button_saveF_Click);
 			// 
+			// saveFileDialog1
+			// 
+			this->saveFileDialog1->DefaultExt = L"wav";
+			// 
 			// button_data_processing
 			// 
 			this->button_data_processing->Location = System::Drawing::Point(58, 197);
@@ -515,9 +519,9 @@ namespace FIR {
 			short int sample;
 			wav_file.read((char*)&sample, sizeof(sample));
 			if (!wav_file.eof()) {
-				//dataF.push_back((int)sample);
+				
 				data[z] = (int)sample;
-				cout << z << " " << data[z] << endl;
+				
 			}
 			z++;
 		}
@@ -587,7 +591,6 @@ namespace FIR {
 	private: void set_zero(complex<double> *data_out_my, double f1, double f2) {
 		f1 = round(f1 * 128 / 44100);
 		f2 = round(f2 * 128 / 44100);
-		cout << endl << f1 << " " << f2 << endl;
 		for (int i = 0; i < f1; i++)
 		{
 			data_out_my[i] *= 0;
@@ -614,7 +617,6 @@ namespace FIR {
 		}
 
 
-		cout << data[0] << endl;
 	}
 
 			 //обратное Фурье
@@ -628,10 +630,8 @@ namespace FIR {
 			}
 			data_result[n] = std::round((1.0 / 128)*sum.real());
 		}
-		cout << endl;
-		for (int i = 0; i < 128; i++) {
-			cout << data_result[i] << data_out_my[i] << " data result " << data[i] << endl;
-		}
+		
+		
 	}
 
 
@@ -669,7 +669,7 @@ namespace FIR {
 		for (int i = 0; i < 128; i++) {
 			data[i] = Convert::ToInt16(data[i] * sko);
 			sko -= 0.0078125;
-			cout << i << " " << data[i] << " kkkkkkk" << endl;
+			
 		}
 		for (int i = 1, j = 0; i < 128; i += 2, j++) {
 			data_FIR[j] = data[127 - i];
@@ -677,9 +677,7 @@ namespace FIR {
 		for (int i = 0, j = 64; i < 128; i += 2, j++) {
 			data_FIR[j] = data[i];
 		}
-		for (int i = 0; i < 128; i++) {
-			cout << i << " " << data_FIR[i] << " FIR" << endl;
-		}
+		
 
 		dft(data_FIR, data_out_my);
 		
@@ -719,7 +717,7 @@ namespace FIR {
 		error = fopen_s(&file, c, "rb");
 		if (error)
 		{
-			cout << "Не удалось открыть файл\n";
+			MessageBox::Show("Файл не открыт.", "Ошибка.");
 			system("pause");
 			return;
 		}
@@ -748,7 +746,7 @@ namespace FIR {
 
 			ifstream wav_file(c, ios::binary);
 			if (!wav_file.is_open()) {
-				cout << "Could not open file: " << endl;
+				MessageBox::Show("Файл не открыт.", "Ошибка.");
 				return;
 			}
 
@@ -761,9 +759,9 @@ namespace FIR {
 				short int sample;
 				wav_file.read((char*)&sample, sizeof(sample));
 				if (!wav_file.eof()) {
-					//dataF.push_back((int)sample);
+					
 					dataF[z] = (int)sample;
-					//cout << z << " " << dataF[z] << endl;
+					
 				}
 				z++;
 			}
