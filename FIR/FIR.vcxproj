@@ -148,6 +148,9 @@
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm.ru.resx">
+      <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\..\OneDrive\Рабочий стол\pyProjects\frequency\005.wav" />

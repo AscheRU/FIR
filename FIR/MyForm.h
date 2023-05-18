@@ -122,13 +122,13 @@ namespace FIR {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->btn_exit = (gcnew System::Windows::Forms::Button());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
@@ -160,287 +160,196 @@ namespace FIR {
 			// 
 			// btn_exit
 			// 
-			this->btn_exit->Anchor = System::Windows::Forms::AnchorStyles::None;
+			resources->ApplyResources(this->btn_exit, L"btn_exit");
 			this->btn_exit->FlatAppearance->BorderSize = 0;
-			this->btn_exit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_exit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->btn_exit->Location = System::Drawing::Point(924, 3);
 			this->btn_exit->Name = L"btn_exit";
-			this->btn_exit->Size = System::Drawing::Size(23, 23);
-			this->btn_exit->TabIndex = 0;
-			this->btn_exit->Text = L"X";
 			this->btn_exit->UseVisualStyleBackColor = true;
 			this->btn_exit->Click += gcnew System::EventHandler(this, &MyForm::btn_exit_Click);
 			// 
 			// chart1
 			// 
+			resources->ApplyResources(this->chart1, L"chart1");
 			this->chart1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
-			legend1->Alignment = System::Drawing::StringAlignment::Center;
-			legend1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea3->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea3);
+			legend3->Alignment = System::Drawing::StringAlignment::Center;
+			legend3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			legend1->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-			legend1->Name = L"Legend1";
-			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(418, 12);
+			legend3->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+			legend3->Name = L"Legend1";
+			this->chart1->Legends->Add(legend3);
 			this->chart1->Name = L"chart1";
-			series1->BorderWidth = 3;
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series1->Color = System::Drawing::Color::White;
-			series1->Legend = L"Legend1";
-			series1->LegendText = L"ИХ";
-			series1->Name = L"Series1";
-			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(500, 300);
-			this->chart1->TabIndex = 1;
-			this->chart1->Text = L"chart";
+			series3->BorderWidth = 3;
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series3->Color = System::Drawing::Color::White;
+			series3->Legend = L"Legend1";
+			series3->LegendText = L"ИХ";
+			series3->Name = L"Series1";
+			this->chart1->Series->Add(series3);
 			// 
 			// chart2
 			// 
+			resources->ApplyResources(this->chart2, L"chart2");
 			this->chart2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea2->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea2);
-			legend2->Alignment = System::Drawing::StringAlignment::Center;
-			legend2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea4->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea4);
+			legend4->Alignment = System::Drawing::StringAlignment::Center;
+			legend4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			legend2->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-			legend2->Name = L"Legend1";
-			this->chart2->Legends->Add(legend2);
-			this->chart2->Location = System::Drawing::Point(418, 318);
+			legend4->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+			legend4->Name = L"Legend1";
+			this->chart2->Legends->Add(legend4);
 			this->chart2->Name = L"chart2";
-			series2->BorderWidth = 3;
-			series2->ChartArea = L"ChartArea1";
-			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series2->Color = System::Drawing::Color::White;
-			series2->Legend = L"Legend1";
-			series2->LegendText = L"Спектр ИХ";
-			series2->Name = L"Series1";
-			this->chart2->Series->Add(series2);
-			this->chart2->Size = System::Drawing::Size(500, 300);
-			this->chart2->TabIndex = 2;
-			this->chart2->Text = L"chart";
+			series4->BorderWidth = 3;
+			series4->ChartArea = L"ChartArea1";
+			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series4->Color = System::Drawing::Color::White;
+			series4->Legend = L"Legend1";
+			series4->LegendText = L"Спектр ИХ";
+			series4->Name = L"Series1";
+			this->chart2->Series->Add(series4);
 			// 
 			// tBox1
 			// 
+			resources->ApplyResources(this->tBox1, L"tBox1");
 			this->tBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			this->tBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->tBox1->Location = System::Drawing::Point(58, 49);
 			this->tBox1->Name = L"tBox1";
-			this->tBox1->Size = System::Drawing::Size(100, 26);
-			this->tBox1->TabIndex = 3;
-			this->tBox1->Text = L"0";
 			// 
 			// tBox2
 			// 
+			resources->ApplyResources(this->tBox2, L"tBox2");
 			this->tBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			this->tBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->tBox2->Location = System::Drawing::Point(58, 77);
 			this->tBox2->Name = L"tBox2";
-			this->tBox2->Size = System::Drawing::Size(100, 26);
-			this->tBox2->TabIndex = 4;
-			this->tBox2->Text = L"5000";
 			// 
 			// label1
 			// 
-			this->label1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(24, 23);
+			resources->ApplyResources(this->label1, L"label1");
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(296, 23);
-			this->label1->TabIndex = 5;
-			this->label1->Text = L"Введите необходимые частоты:";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label2
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(28, 54);
+			resources->ApplyResources(this->label2, L"label2");
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(23, 17);
-			this->label2->TabIndex = 6;
-			this->label2->Text = L"от";
 			// 
 			// label3
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(28, 82);
+			resources->ApplyResources(this->label3, L"label3");
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(24, 17);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"до";
 			// 
 			// buttonFIR
 			// 
-			this->buttonFIR->Location = System::Drawing::Point(164, 49);
+			resources->ApplyResources(this->buttonFIR, L"buttonFIR");
+			this->buttonFIR->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->buttonFIR->Name = L"buttonFIR";
-			this->buttonFIR->Size = System::Drawing::Size(95, 54);
-			this->buttonFIR->TabIndex = 8;
-			this->buttonFIR->Text = L"Расчитать ИХ";
 			this->buttonFIR->UseVisualStyleBackColor = true;
 			this->buttonFIR->Click += gcnew System::EventHandler(this, &MyForm::buttonFIR_Click);
 			// 
 			// button_openF
 			// 
-			this->button_openF->Location = System::Drawing::Point(58, 139);
+			resources->ApplyResources(this->button_openF, L"button_openF");
+			this->button_openF->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button_openF->Name = L"button_openF";
-			this->button_openF->Size = System::Drawing::Size(100, 52);
-			this->button_openF->TabIndex = 9;
-			this->button_openF->Text = L"Открыть файл";
 			this->button_openF->UseVisualStyleBackColor = true;
 			this->button_openF->Click += gcnew System::EventHandler(this, &MyForm::button_openF_Click);
 			// 
 			// openFileDialog1
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
-			this->openFileDialog1->Filter = L"(*.wav)|*.wav";
+			resources->ApplyResources(this->openFileDialog1, L"openFileDialog1");
 			// 
 			// labelName1
 			// 
-			this->labelName1->AutoSize = true;
-			this->labelName1->Location = System::Drawing::Point(55, 372);
+			resources->ApplyResources(this->labelName1, L"labelName1");
 			this->labelName1->Name = L"labelName1";
-			this->labelName1->Size = System::Drawing::Size(171, 17);
-			this->labelName1->TabIndex = 12;
-			this->labelName1->Text = L"Частота дискретизации:";
 			// 
 			// labelName4
 			// 
-			this->labelName4->AutoSize = true;
-			this->labelName4->Location = System::Drawing::Point(55, 474);
+			resources->ApplyResources(this->labelName4, L"labelName4");
 			this->labelName4->Name = L"labelName4";
-			this->labelName4->Size = System::Drawing::Size(148, 17);
-			this->labelName4->TabIndex = 13;
-			this->labelName4->Text = L"Количество каналов:";
 			// 
 			// labelName3
 			// 
-			this->labelName3->AutoSize = true;
-			this->labelName3->Location = System::Drawing::Point(55, 440);
+			resources->ApplyResources(this->labelName3, L"labelName3");
 			this->labelName3->Name = L"labelName3";
-			this->labelName3->Size = System::Drawing::Size(98, 17);
-			this->labelName3->TabIndex = 14;
-			this->labelName3->Text = L"Бит в сэмпле:";
 			// 
 			// labelName2
 			// 
-			this->labelName2->AutoSize = true;
-			this->labelName2->Location = System::Drawing::Point(55, 406);
+			resources->ApplyResources(this->labelName2, L"labelName2");
 			this->labelName2->Name = L"labelName2";
-			this->labelName2->Size = System::Drawing::Size(149, 17);
-			this->labelName2->TabIndex = 15;
-			this->labelName2->Text = L"Количество семплов:";
 			// 
 			// labelValue1
 			// 
-			this->labelValue1->AutoSize = true;
-			this->labelValue1->Location = System::Drawing::Point(232, 372);
+			resources->ApplyResources(this->labelValue1, L"labelValue1");
 			this->labelValue1->Name = L"labelValue1";
-			this->labelValue1->Size = System::Drawing::Size(13, 17);
-			this->labelValue1->TabIndex = 16;
-			this->labelValue1->Text = L"-";
 			// 
 			// labelValue2
 			// 
-			this->labelValue2->AutoSize = true;
-			this->labelValue2->Location = System::Drawing::Point(232, 406);
+			resources->ApplyResources(this->labelValue2, L"labelValue2");
 			this->labelValue2->Name = L"labelValue2";
-			this->labelValue2->Size = System::Drawing::Size(13, 17);
-			this->labelValue2->TabIndex = 17;
-			this->labelValue2->Text = L"-";
 			// 
 			// labelValue3
 			// 
-			this->labelValue3->AutoSize = true;
-			this->labelValue3->Location = System::Drawing::Point(232, 440);
+			resources->ApplyResources(this->labelValue3, L"labelValue3");
 			this->labelValue3->Name = L"labelValue3";
-			this->labelValue3->Size = System::Drawing::Size(13, 17);
-			this->labelValue3->TabIndex = 18;
-			this->labelValue3->Text = L"-";
 			// 
 			// labelValue4
 			// 
-			this->labelValue4->AutoSize = true;
-			this->labelValue4->Location = System::Drawing::Point(232, 474);
+			resources->ApplyResources(this->labelValue4, L"labelValue4");
 			this->labelValue4->Name = L"labelValue4";
-			this->labelValue4->Size = System::Drawing::Size(13, 17);
-			this->labelValue4->TabIndex = 19;
-			this->labelValue4->Text = L"-";
 			// 
 			// labelStat
 			// 
-			this->labelStat->AutoSize = true;
-			this->labelStat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			resources->ApplyResources(this->labelStat, L"labelStat");
 			this->labelStat->ForeColor = System::Drawing::Color::Snow;
-			this->labelStat->Location = System::Drawing::Point(54, 542);
 			this->labelStat->Name = L"labelStat";
-			this->labelStat->Size = System::Drawing::Size(0, 20);
-			this->labelStat->TabIndex = 20;
 			// 
 			// labelValue5
 			// 
-			this->labelValue5->AutoSize = true;
-			this->labelValue5->Location = System::Drawing::Point(234, 508);
+			resources->ApplyResources(this->labelValue5, L"labelValue5");
 			this->labelValue5->Name = L"labelValue5";
-			this->labelValue5->Size = System::Drawing::Size(13, 17);
-			this->labelValue5->TabIndex = 21;
-			this->labelValue5->Text = L"-";
 			// 
 			// labelName5
 			// 
-			this->labelName5->AutoSize = true;
-			this->labelName5->Location = System::Drawing::Point(55, 508);
+			resources->ApplyResources(this->labelName5, L"labelName5");
 			this->labelName5->Name = L"labelName5";
-			this->labelName5->Size = System::Drawing::Size(173, 17);
-			this->labelName5->TabIndex = 22;
-			this->labelName5->Text = L"Размер данных в байтах:";
 			// 
 			// button_saveF
 			// 
-			this->button_saveF->Location = System::Drawing::Point(58, 255);
+			resources->ApplyResources(this->button_saveF, L"button_saveF");
+			this->button_saveF->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button_saveF->Name = L"button_saveF";
-			this->button_saveF->Size = System::Drawing::Size(100, 52);
-			this->button_saveF->TabIndex = 23;
-			this->button_saveF->Text = L"Сохранить файл";
 			this->button_saveF->UseVisualStyleBackColor = true;
 			this->button_saveF->Click += gcnew System::EventHandler(this, &MyForm::button_saveF_Click);
 			// 
 			// saveFileDialog1
 			// 
 			this->saveFileDialog1->DefaultExt = L"wav";
+			resources->ApplyResources(this->saveFileDialog1, L"saveFileDialog1");
 			// 
 			// button_data_processing
 			// 
-			this->button_data_processing->Location = System::Drawing::Point(58, 197);
+			resources->ApplyResources(this->button_data_processing, L"button_data_processing");
+			this->button_data_processing->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button_data_processing->Name = L"button_data_processing";
-			this->button_data_processing->Size = System::Drawing::Size(100, 52);
-			this->button_data_processing->TabIndex = 24;
-			this->button_data_processing->Text = L"Обработать файл";
 			this->button_data_processing->UseMnemonic = false;
 			this->button_data_processing->UseVisualStyleBackColor = false;
 			this->button_data_processing->Click += gcnew System::EventHandler(this, &MyForm::button_data_processing_Click);
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			this->ClientSize = System::Drawing::Size(950, 650);
 			this->Controls->Add(this->button_data_processing);
 			this->Controls->Add(this->button_saveF);
 			this->Controls->Add(this->labelName5);
@@ -464,12 +373,9 @@ namespace FIR {
 			this->Controls->Add(this->chart2);
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->btn_exit);
+			this->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"КИХ";
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
 			this->ResumeLayout(false);
@@ -674,11 +580,12 @@ namespace FIR {
 		for (int i = 1, j = 0; i < 128; i += 2, j++) {
 			data_FIR[j] = data[127 - i];
 		}
-		for (int i = 0, j = 64; i < 128; i += 2, j++) {
+		for (int i = 2, j = 64; i < 128; i += 2, j++) {
 			data_FIR[j] = data[i];
 		}
 		
-
+		
+		//вызов функций
 		dft(data_FIR, data_out_my);
 		
 		set_zero(data_out_my, a, b);
@@ -687,12 +594,16 @@ namespace FIR {
 
 		chart(data_result, data_out_my);
 
+		this->labelStat->Text = "Откройте файл";
 
 	}
 
 
 			 //КНОПКА открытия файла для преобразования
 	private: System::Void button_openF_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->labelStat->Text = "Идет загрузка данных";
+
+		
 		String^ FileName = "";
 		string Fname;
 
@@ -711,14 +622,14 @@ namespace FIR {
 
 								//СЧИТЫВАНИЕ ФАЙЛА
 		//считывание шапки
-
+		
 		FILE *file;
 		errno_t error;
 		error = fopen_s(&file, c, "rb");
 		if (error)
 		{
 			MessageBox::Show("Файл не открыт.", "Ошибка.");
-			system("pause");
+			//system("pause");
 			return;
 		}
 		WAVHEADER header;
@@ -746,7 +657,7 @@ namespace FIR {
 
 			ifstream wav_file(c, ios::binary);
 			if (!wav_file.is_open()) {
-				MessageBox::Show("Файл не открыт.", "Ошибка.");
+				MessageBox::Show("Не удалось открыть файл.", "Ошибка.");
 				return;
 			}
 
@@ -773,8 +684,7 @@ namespace FIR {
 
 			//КНОПКА обработки файла
 	private: System::Void button_data_processing_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-
+		this->labelStat->Text = "Идет обработка данных";
 		int val = 0;
 		for (int i = 0; i < x - 127; i++) {
 			val = 0;
@@ -782,10 +692,14 @@ namespace FIR {
 				val += data_result[j] * dataF[i + j];
 			}
 			dataPROC[i] = val / 32767;
-			
+
 		}
-		
+
 		this->labelStat->Text = "Данные обработаны";
+		
+		
+
+		
 		
 	}
 
@@ -793,6 +707,7 @@ namespace FIR {
 	
 			 //КНОПКА сохранения файла
 	private: System::Void button_saveF_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->labelStat->Text = "Идет сохранение данных";
 		String^ FileName = "";
 		string Fname;
 
@@ -814,12 +729,6 @@ namespace FIR {
 
 	}
 	
-
-
-	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {}
-	private: System::Void lableValue2_Click(System::Object^  sender, System::EventArgs^  e) {}
-
-
 
 
 
