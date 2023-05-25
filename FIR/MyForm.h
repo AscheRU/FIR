@@ -392,6 +392,7 @@ namespace FIR {
 	private: double *data = new double[128];								//данные из файла с белым шумом для получения ИХ
 	private: complex<double> *data_out_my = new complex<double>[128];		//комплексные числи на выходе прямого преобразования Фурье
 	private: double *data_result = new double[128];							//данные ИХ после всех обработок ( обратное пр. Фурье и симметрия)
+	private: double *data_result1 = new double[127];
 	private: double *data_FIR = new double[127];							//временное хранение данных при обработке ИХ в треугольник.(обработчик события //кнопка расчета ИХ)
 	private: complex<double> *datamatr = new complex<double>[128];			//матрица для вычисления ППФ и ОПФ
 	private: const double TwoPi = 6.283185307179586;						//число Пи * 2
@@ -488,7 +489,7 @@ namespace FIR {
 		}
 		for (int i = 1; i < 65; i++)
 		{
-			y = masY[i].real() / 20;
+			y = sqrt(pow(masY[i].real(), 2) + pow(masY[i].imag(), 2));
 			this->chart2->Series[0]->Points->AddXY(i * 44100 / 128, y);
 		}
 	}
@@ -500,6 +501,10 @@ namespace FIR {
 		for (int i = 0; i < f1; i++)
 		{
 			data_out_my[i] *= 0;
+		}
+		for (int i = f1; i < f2; i++)
+		{
+			data_out_my[i] = complex<double>(50000, 25000);
 		}
 
 		for (int i = f2; i < 128; i++)
@@ -519,7 +524,7 @@ namespace FIR {
 			for (int n = 0; n < 128; ++n) {
 				sum += data[n] * std::exp(-1.0 * complex<double>(0, 1) * TwoPi * Convert::ToDouble(k) * Convert::ToDouble(n) / 128.0);
 			}
-			data_out_my[k] = sum;
+			data_out_my[k] = abs(sum);
 		}
 
 
@@ -534,8 +539,16 @@ namespace FIR {
 			for (int k = 0; k < 128; ++k) {
 				sum += data_out_my[k] * std::exp(std::complex<double>(0, 1) * TwoPi * Convert::ToDouble(k) * Convert::ToDouble(n) / 128.0);
 			}
-			data_result[n] = std::round((1.0 / 128)*sum.real());
+			data_result[n] = round((1.0 / 128)*sum.real());
 		}
+		//отражает массив относительно центра
+		for (int i = 65, j = 0; i < 128; i++, j++) {
+			data_result1[j] = data_result[i];
+		}
+		for (int i = 0, j = 63; i < 64; i++, j++) {
+			data_result1[j] = data_result[i];
+		}
+		
 		
 		
 	}
@@ -592,7 +605,7 @@ namespace FIR {
 		
 		idft(data_out_my, data_result);
 
-		chart(data_result, data_out_my);
+		chart(data_result1, data_out_my);
 
 		this->labelStat->Text = "Откройте файл";
 
@@ -621,6 +634,7 @@ namespace FIR {
 		
 
 								//СЧИТЫВАНИЕ ФАЙЛА
+
 		//считывание шапки
 		
 		FILE *file;
@@ -686,10 +700,10 @@ namespace FIR {
 	private: System::Void button_data_processing_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->labelStat->Text = "Идет обработка данных";
 		int val = 0;
-		for (int i = 0; i < x - 127; i++) {
+		for (int i = 0; i < x - 126; i++) {
 			val = 0;
-			for (int j = 0; j < 128; j++) {
-				val += data_result[j] * dataF[i + j];
+			for (int j = 0; j < 127; j++) {
+				val += data_result1[j] * dataF[i + j];
 			}
 			dataPROC[i] = val / 32767;
 
