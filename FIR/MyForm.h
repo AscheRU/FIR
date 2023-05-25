@@ -127,12 +127,12 @@ namespace FIR {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->btn_exit = (gcnew System::Windows::Forms::Button());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
@@ -176,51 +176,51 @@ namespace FIR {
 			// 
 			this->chart1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea3->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea3);
-			legend3->Alignment = System::Drawing::StringAlignment::Center;
-			legend3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			legend1->Alignment = System::Drawing::StringAlignment::Center;
+			legend1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			legend3->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-			legend3->Name = L"Legend1";
-			this->chart1->Legends->Add(legend3);
+			legend1->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
 			resources->ApplyResources(this->chart1, L"chart1");
 			this->chart1->Name = L"chart1";
-			series3->BorderWidth = 3;
-			series3->ChartArea = L"ChartArea1";
-			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series3->Color = System::Drawing::Color::White;
-			series3->Legend = L"Legend1";
-			series3->LegendText = L"»’";
-			series3->Name = L"Series1";
-			this->chart1->Series->Add(series3);
+			series1->BorderWidth = 3;
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series1->Color = System::Drawing::Color::White;
+			series1->Legend = L"Legend1";
+			series1->LegendText = L"»’";
+			series1->Name = L"Series1";
+			this->chart1->Series->Add(series1);
 			// 
 			// chart2
 			// 
 			this->chart2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea4->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea4);
-			legend4->Alignment = System::Drawing::StringAlignment::Center;
-			legend4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea2->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea2);
+			legend2->Alignment = System::Drawing::StringAlignment::Center;
+			legend2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			legend4->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-			legend4->Name = L"Legend1";
-			this->chart2->Legends->Add(legend4);
+			legend2->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+			legend2->Name = L"Legend1";
+			this->chart2->Legends->Add(legend2);
 			resources->ApplyResources(this->chart2, L"chart2");
 			this->chart2->Name = L"chart2";
-			series4->BorderWidth = 3;
-			series4->ChartArea = L"ChartArea1";
-			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series4->Color = System::Drawing::Color::White;
-			series4->Legend = L"Legend1";
-			series4->LegendText = L"—ÔÂÍÚ »’";
-			series4->Name = L"Series1";
-			this->chart2->Series->Add(series4);
+			series2->BorderWidth = 3;
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series2->Color = System::Drawing::Color::White;
+			series2->Legend = L"Legend1";
+			series2->LegendText = L"—ÔÂÍÚ »’";
+			series2->Name = L"Series1";
+			this->chart2->Series->Add(series2);
 			// 
 			// tBox1
 			// 
@@ -363,6 +363,7 @@ namespace FIR {
 			// 
 			resources->ApplyResources(this->progressBar1, L"progressBar1");
 			this->progressBar1->Name = L"progressBar1";
+			this->progressBar1->Step = 1;
 			// 
 			// MyForm
 			// 
@@ -495,10 +496,18 @@ namespace FIR {
 		outFile.write(reinterpret_cast<const char *>(&dataSize), 4);
 
 		// «‡ÔËÒ¸ Ï‡ÒÒË‚‡ ‰‡ÌÌ˚ı ‚ Ù‡ÈÎ
+		this->progressBar1->Visible = true;
+		double proBarVal = 0;
 		for (int i = 0; i < dataS; i++)
 		{
 			outFile.write(reinterpret_cast<const char *>(&data[i]), bitsPerSample / 8);
+			if (i == proBarVal) {
+				this->progressBar1->Increment(1);
+				proBarVal += x / 100;
+			}
 		}
+		this->progressBar1->Increment(-100);
+		this->progressBar1->Visible = false;
 
 		outFile.close();
 	}
@@ -709,16 +718,23 @@ namespace FIR {
 
 			// ◊ËÚ‡ÂÏ Í‡Ê‰˚È Ò˝ÏÔÎ ËÁ Ù‡ÈÎ‡ Ë ÒÓı‡ÌˇÂÏ ‚ ‚ÂÍÚÓÂ dataF
 			int z = 0;
+			this->progressBar1->Visible = true;
+			double proBarVal = 0;
 			while (!wav_file.eof()) {
 				short int sample;
 				wav_file.read((char*)&sample, sizeof(sample));
 				if (!wav_file.eof()) {
 					
 					dataF[z] = (int)sample;
-					
+					if (z == proBarVal) {
+						this->progressBar1->Increment(1);
+						proBarVal += couSample / 100;
+					}
 				}
 				z++;
 			}
+			this->progressBar1->Increment(-100);
+			this->progressBar1->Visible = false;
 			x = z;
 
 			wav_file.close();
@@ -785,7 +801,7 @@ namespace FIR {
 
 
 
-			//œ≈–≈“¿— »¬¿Õ»≈ Œ Õ¿
+			//œ≈–≈“¿— »¬¿Õ»≈ Œ Õ¿  ‚ ÁÓÌÂ MyForm
 	private: bool dragging;
 	private: Point offset;
 	private: System::Void MyForm_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
