@@ -196,6 +196,9 @@ namespace FIR {
 			series1->LegendText = L"ÈÕ";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
+			this->chart1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart1_MouseDown);
+			this->chart1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart1_MouseMove);
+			this->chart1->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart1_MouseUp);
 			// 
 			// chart2
 			// 
@@ -221,6 +224,9 @@ namespace FIR {
 			series2->LegendText = L"Ñïåêòð ÈÕ";
 			series2->Name = L"Series1";
 			this->chart2->Series->Add(series2);
+			this->chart2->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart2_MouseDown);
+			this->chart2->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart2_MouseMove);
+			this->chart2->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart2_MouseUp);
 			// 
 			// tBox1
 			// 
@@ -821,6 +827,43 @@ namespace FIR {
 	private: System::Void MyForm_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
 		this->dragging = false;
 	}
+
+
+			 //ÏÅÐÅÒÀÑÊÈÂÀÍÈÅ ÎÊÍÀ  â çîíå âåðõíåãî ãðàôèêà
+	private: System::Void chart1_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+		this->dragging = true;
+		offset = PointToScreen(e->Location) - (Drawing::Size)this->Location;
+	}
+	private: System::Void chart1_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+		if (this->dragging) {
+			Point currentScreenPos = PointToScreen(e->Location);
+			Location = Point(currentScreenPos.X - this->offset.X, currentScreenPos.Y - this->offset.Y);
+		}
+	}
+	private: System::Void chart1_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+		this->dragging = false;
+	}
+
+
+
+			 //ÏÅÐÅÒÀÑÊÈÂÀÍÈÅ ÎÊÍÀ  â çîíå íèæíåãî ãðàôèêà
+	private: System::Void chart2_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+		this->dragging = true;
+		offset = PointToScreen(e->Location) - (Drawing::Size)this->Location;
+	}
+	private: System::Void chart2_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+		if (this->dragging) {
+			Point currentScreenPos = PointToScreen(e->Location);
+			Location = Point(currentScreenPos.X - this->offset.X, currentScreenPos.Y - this->offset.Y);
+		}
+	}
+	private: System::Void chart2_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+		this->dragging = false;
+	}
+
+
+
+
 };
 				
 }
