@@ -8,4 +8,5 @@ int main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	FIR::MyForm form;
 	Application::Run(% form);
+	
 }
