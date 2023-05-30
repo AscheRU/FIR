@@ -153,12 +153,12 @@ namespace FIR {
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea5 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea6 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->btn_exit = (gcnew System::Windows::Forms::Button());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
@@ -209,26 +209,26 @@ namespace FIR {
 			// 
 			this->chart1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea3->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea3);
-			legend3->Alignment = System::Drawing::StringAlignment::Center;
-			legend3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea5->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea5);
+			legend5->Alignment = System::Drawing::StringAlignment::Center;
+			legend5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			legend3->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-			legend3->Name = L"Legend1";
-			this->chart1->Legends->Add(legend3);
+			legend5->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+			legend5->Name = L"Legend1";
+			this->chart1->Legends->Add(legend5);
 			resources->ApplyResources(this->chart1, L"chart1");
 			this->chart1->Name = L"chart1";
-			series3->BorderWidth = 3;
-			series3->ChartArea = L"ChartArea1";
-			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series3->Color = System::Drawing::Color::White;
-			series3->Legend = L"Legend1";
-			series3->LegendText = L"ИХ";
-			series3->Name = L"Series1";
-			this->chart1->Series->Add(series3);
+			series5->BorderWidth = 3;
+			series5->ChartArea = L"ChartArea1";
+			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series5->Color = System::Drawing::Color::White;
+			series5->Legend = L"Legend1";
+			series5->LegendText = L"ИХ";
+			series5->Name = L"Series1";
+			this->chart1->Series->Add(series5);
 			this->chart1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart1_MouseDown);
 			this->chart1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart1_MouseMove);
 			this->chart1->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart1_MouseUp);
@@ -237,26 +237,26 @@ namespace FIR {
 			// 
 			this->chart2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			chartArea4->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea4);
-			legend4->Alignment = System::Drawing::StringAlignment::Center;
-			legend4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+			chartArea6->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea6);
+			legend6->Alignment = System::Drawing::StringAlignment::Center;
+			legend6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			legend4->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-			legend4->Name = L"Legend1";
-			this->chart2->Legends->Add(legend4);
+			legend6->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+			legend6->Name = L"Legend1";
+			this->chart2->Legends->Add(legend6);
 			resources->ApplyResources(this->chart2, L"chart2");
 			this->chart2->Name = L"chart2";
-			series4->BorderWidth = 3;
-			series4->ChartArea = L"ChartArea1";
-			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series4->Color = System::Drawing::Color::White;
-			series4->Legend = L"Legend1";
-			series4->LegendText = L"Спектр ИХ";
-			series4->Name = L"Series1";
-			this->chart2->Series->Add(series4);
+			series6->BorderWidth = 3;
+			series6->ChartArea = L"ChartArea1";
+			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series6->Color = System::Drawing::Color::White;
+			series6->Legend = L"Legend1";
+			series6->LegendText = L"Спектр ИХ";
+			series6->Name = L"Series1";
+			this->chart2->Series->Add(series6);
 			this->chart2->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart2_MouseDown);
 			this->chart2->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart2_MouseMove);
 			this->chart2->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::chart2_MouseUp);
@@ -287,10 +287,12 @@ namespace FIR {
 			// 
 			// buttonFIR
 			// 
-			this->buttonFIR->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonFIR->BackColor = System::Drawing::Color::Gray;
 			resources->ApplyResources(this->buttonFIR, L"buttonFIR");
+			this->buttonFIR->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonFIR->FlatAppearance->BorderSize = 0;
 			this->buttonFIR->Name = L"buttonFIR";
-			this->buttonFIR->UseVisualStyleBackColor = true;
+			this->buttonFIR->UseVisualStyleBackColor = false;
 			this->buttonFIR->Click += gcnew System::EventHandler(this, &MyForm::buttonFIR_Click);
 			// 
 			// openFileDialog1
@@ -407,16 +409,21 @@ namespace FIR {
 			// 
 			// button_openF
 			// 
-			this->button_openF->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button_openF->BackColor = System::Drawing::Color::Gray;
 			resources->ApplyResources(this->button_openF, L"button_openF");
+			this->button_openF->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button_openF->FlatAppearance->BorderSize = 0;
 			this->button_openF->Name = L"button_openF";
-			this->button_openF->UseVisualStyleBackColor = true;
+			this->button_openF->UseVisualStyleBackColor = false;
 			this->button_openF->Click += gcnew System::EventHandler(this, &MyForm::button_openF_Click);
 			// 
 			// button_data_processing
 			// 
-			this->button_data_processing->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button_data_processing->BackColor = System::Drawing::Color::Gray;
 			resources->ApplyResources(this->button_data_processing, L"button_data_processing");
+			this->button_data_processing->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button_data_processing->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->button_data_processing->FlatAppearance->BorderSize = 0;
 			this->button_data_processing->Name = L"button_data_processing";
 			this->button_data_processing->UseMnemonic = false;
 			this->button_data_processing->UseVisualStyleBackColor = false;
@@ -424,10 +431,12 @@ namespace FIR {
 			// 
 			// button_saveF
 			// 
-			this->button_saveF->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button_saveF->BackColor = System::Drawing::Color::Gray;
 			resources->ApplyResources(this->button_saveF, L"button_saveF");
+			this->button_saveF->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button_saveF->FlatAppearance->BorderSize = 0;
 			this->button_saveF->Name = L"button_saveF";
-			this->button_saveF->UseVisualStyleBackColor = true;
+			this->button_saveF->UseVisualStyleBackColor = false;
 			this->button_saveF->Click += gcnew System::EventHandler(this, &MyForm::button_saveF_Click);
 			// 
 			// timerMenu
@@ -461,10 +470,10 @@ namespace FIR {
 			// 
 			// MyForm
 			// 
-			resources->ApplyResources(this, L"$this");
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			resources->ApplyResources(this, L"$this");
 			this->Controls->Add(this->btnMenu);
 			this->Controls->Add(this->panelLeft);
 			this->Controls->Add(this->progressBar1);
@@ -512,9 +521,9 @@ namespace FIR {
 	public: bool flagMenu1 = true;
 	public: bool flagClose = false;
 	public: bool flagChart = true;
-	public: int pointX1 = 418;
+	public: int pointX1 = 400;
 	public: int pointY1 = -312;
-	public: int pointX2 = 418;
+	public: int pointX2 = 400;
 	public: int pointY2 = 655;
 
 			 //выставляет параметры частот по умолчанию, если значения не были введены
@@ -999,7 +1008,8 @@ namespace FIR {
 		}
 
 
-		if (msec == 26) { this->timerMenu->Enabled = false; msec = 0; }
+		if (msec == 26) { this->timerMenu->Enabled = false; msec = 0; MyForm::Refresh();
+		}
 		
 	}
 			 
@@ -1026,6 +1036,7 @@ namespace FIR {
 			flagForm = true;
 			flagMenu1 = true;
 			if (flagClose) { this->Close(); }
+			MyForm::Refresh();
 		}
 	}
 			 // анимация области графиков
@@ -1042,7 +1053,7 @@ namespace FIR {
 		}
 
 
-		if (msec == 33) { this->timerMain2->Enabled = false; msec = 0; flagMenu1 = false; this->timerChart->Enabled = true;
+		if (msec == 33) { this->timerMain2->Enabled = false; msec = 0; flagMenu1 = false; this->timerChart->Enabled = true; MyForm::Refresh();
 		}
 
 	}
@@ -1073,6 +1084,7 @@ namespace FIR {
 
 				this->timerMenu->Enabled = true;
 				flagMenu = !flagMenu;
+				MyForm::Refresh();
 			}
 			
 		}
