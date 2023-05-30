@@ -873,11 +873,14 @@ namespace FIR {
 			//КНОПКА обработки файла
 	private: System::Void button_data_processing_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->labelStat->Text = "Идет обработка данных";
+		MyForm::Refresh();
+
 		//MessageBox::Show("Для начала обработки нажмите <OK> ", "");
 		this->progressBar1->Visible = true;
 		double proBarVal = 0;
 		int val = 0;
 		for (int i = 0; i < x - 126; i++) {
+			
 			val = 0;
 			for (int j = 0; j < 127; j++) {
 				val += data_result1[j] * dataF[i + j];
@@ -887,6 +890,7 @@ namespace FIR {
 			if ( i == proBarVal ){
 				this->progressBar1->Increment(1);
 				proBarVal += (x - 126) / 100;
+				
 			}
 
 		}
