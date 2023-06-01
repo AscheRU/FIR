@@ -516,6 +516,7 @@ namespace FIR {
 	public: int msecForm = 0;
 	public: int sizeXmenu = 0;
 	public: int sizeYmenu = 0;
+	public: bool flagBTN = true;
 	public: bool flagForm = true;
 	public: bool flagMenu = true;
 	public: bool flagMenu1 = true;
@@ -713,14 +714,17 @@ namespace FIR {
 			 //КНОПКА Меню
 	private: System::Void btnMenu_Click(System::Object^  sender, System::EventArgs^  e) {
 		
-		if (!flagChart) { this->timerChart->Enabled = true; }
+		if (flagBTN) {
+			if (!flagChart) { this->timerChart->Enabled = true; }
 
-		else {
-			this->timerMain1->Enabled = true;
-			flagForm = !flagForm;
+			else {
+				this->timerMain1->Enabled = true;
+				flagForm = !flagForm;
 
-			this->timerMenu->Enabled = true;
-			flagMenu = !flagMenu;
+				this->timerMenu->Enabled = true;
+				flagMenu = !flagMenu;
+			}
+			flagBTN = false;
 		}
 	}
 
@@ -994,8 +998,9 @@ namespace FIR {
 
 			 //анимация меню
 	private: System::Void timerMenu_Tick(System::Object^  sender, System::EventArgs^  e) {
-		msec++;
-
+		
+		flagBTN = false; msec++;
+		
 		if (flagMenu) {
 			if (msec < 20) { this->MyForm::Width -= msecForm; }
 			this->panelLeft->Size = System::Drawing::Size(sizeXmenu - msec, sizeYmenu);
@@ -1012,15 +1017,17 @@ namespace FIR {
 		}
 
 
-		if (msec == 26) { this->timerMenu->Enabled = false; msec = 0; MyForm::Refresh();
+		if (msec == 26) {
+			this->timerMenu->Enabled = false; msec = 0;  MyForm::Refresh();
 		}
 		
 	}
 			 
 			 //анимация формы
 	private: System::Void timerMain1_Tick(System::Object^  sender, System::EventArgs^  e) {
+		
+		flagBTN = false;
 		msecForm++;
-
 		if (flagMenu) {	
 			if (!flagMenu1 && msecForm < 34) { this->MyForm::Width -= msecForm; }
 			this->MyForm::Height -= msecForm; 
@@ -1041,14 +1048,14 @@ namespace FIR {
 			flagMenu1 = true;
 			if (flagClose) { this->Close(); }
 			MyForm::Refresh();
+			flagBTN = true;
 		}
 	}
 			 // анимация области графиков
 	private: System::Void timerMain2_Tick(System::Object^  sender, System::EventArgs^  e) {
+		flagBTN = false;
 		msec++;
-
 		
-
 		if(flagMenu1 && MyForm::Width < 938) {
 			this->MyForm::Width += msec; 
 
@@ -1064,6 +1071,7 @@ namespace FIR {
 	
 			 //движение графиков
 	private: System::Void timerChart_Tick(System::Object^  sender, System::EventArgs^  e) {
+		flagBTN = false;
 		msec++;
 
 		if (flagChart) {
@@ -1078,7 +1086,7 @@ namespace FIR {
 		}
 
 
-		if (msec == 25) { 
+		if (msec == 25) {
 			this->timerChart->Enabled = false;
 			msec = 0;
 			flagChart = !flagChart;
@@ -1090,7 +1098,9 @@ namespace FIR {
 				flagMenu = !flagMenu;
 				MyForm::Refresh();
 			}
-			
+			else {
+			flagBTN = true;
+			}
 		}
 }	
 
